@@ -1,5 +1,32 @@
 {
   "_comment": "Cypress",
+  "block.bayou_blues.stripped_cypress_log": "Stripped Cypress Log",
+  "block.bayou_blues.cypress_log": "Cypress Log",
+  "block.bayou_blues.stripped_cypress_wood": "Stripped Cypress Wood",
+  "block.bayou_blues.cypress_wood": "Cypress Wood",
+  "block.bayou_blues.cypress_planks": "Cypress Planks",
+  "block.bayou_blues.cypress_slab": "Cypress Slab",
+  "block.bayou_blues.cypress_stairs": "Cypress Stairs",
+  "block.bayou_blues.cypress_pressure_plate": "Cypress Pressure Plate",
+  "block.bayou_blues.cypress_fence": "Cypress Fence",
+  "block.bayou_blues.cypress_fence_gate": "Cypress Fence Gate",
+  "block.bayou_blues.cypress_button": "Cypress Button",
+  "block.bayou_blues.cypress_trapdoor": "Cypress Trapdoor",
+  "block.bayou_blues.cypress_door": "Cypress Door",
+  "block.bayou_blues.cypress_sign": "Cypress Sign",
+  "block.bayou_blues.cypress_leaves": "Cypress Leaves",
+  "block.bayou_blues.cypress_sapling": "Cypress Sapling",
+  "block.bayou_blues.cypress_leaf_carpet": "Cypress Leaf Carpet",
+  "block.bayou_blues.cypress_bookshelf": "Cypress Bookshelf",
+  "block.bayou_blues.cypress_chest": "Cypress Chest",
+  "block.bayou_blues.cypress_trapped_chest": "Cypress Trapped Chest",
+  "block.bayou_blues.cypress_ladder": "Cypress Ladder",
+  "block.bayou_blues.cypress_vertical_slab": "Cypress Vertical Slab",
+  "block.bayou_blues.vertical_cypress_planks": "Vertical Cypress Planks",
+  "block.bayou_blues.cypress_beehive": "Cypress Beehive",
+  "block.bayou_blues.potted_cypress_sapling": "Potted Cypress Sapling",
+
+  "item.bayou_blues.cypress_boat": "Cypress Boat",
 
   "_comment1": "Gooseberries"
 }
