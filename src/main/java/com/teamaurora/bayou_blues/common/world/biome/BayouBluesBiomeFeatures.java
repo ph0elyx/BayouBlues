@@ -43,6 +43,7 @@ public class BayouBluesBiomeFeatures {
 
         withBayouVegetation(builder);
 
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.TREES_BAYOU_WATER);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_SWAMP);
 
         DefaultBiomeFeatures.withNormalMushroomGeneration(builder);

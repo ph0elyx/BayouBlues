@@ -76,7 +76,8 @@ public class BayouBluesFeatures {
 
         public static final ConfiguredFeature<?, ?> CYPRESS_BUSH = Feature.TREE.withConfiguration(Configs.CYPRESS_BUSH_CONFIG);
 
-        public static final ConfiguredFeature<?, ?> TREES_BAYOU = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(CYPRESS_BUSH.withChance(0.35F), WATER_MEGA_CYPRESS.withChance(0.166666667F), MEGA_CYPRESS.withChance(0.333333334F), WATER_CYPRESS.withChance(0.5F)), CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(20, 0.1F, 1)));
+        public static final ConfiguredFeature<?, ?> TREES_BAYOU = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(CYPRESS_BUSH.withChance(0.35F), MEGA_CYPRESS.withChance(0.333333334F)), CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(20, 0.1F, 1)));
+        public static final ConfiguredFeature<?, ?> TREES_BAYOU_WATER = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(WATER_MEGA_CYPRESS.withChance(0.333333334F)), WATER_CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(9, 0.1F, 1)));
 
         private static <FC extends IFeatureConfig> void register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
             Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(BayouBlues.MODID, name), configuredFeature);
@@ -91,6 +92,7 @@ public class BayouBluesFeatures {
             register("cypress_bush", CYPRESS_BUSH);
 
             register("trees_bayou", TREES_BAYOU);
+            register("trees_bayou_water", TREES_BAYOU_WATER);
         }
     }
 }
