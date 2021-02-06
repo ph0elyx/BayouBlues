@@ -3,6 +3,7 @@ package com.teamaurora.bayou_blues.core;
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.teamaurora.bayou_blues.core.other.BayouBluesCompat;
 import com.teamaurora.bayou_blues.core.other.BayouBluesRendering;
+import com.teamaurora.bayou_blues.core.registry.BayouBluesBiomes;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -40,6 +41,9 @@ public class BayouBlues
             BayouBluesFeatures.Configured.registerConfiguredFeatures();
             BayouBluesCompat.registerFlammables();
             BayouBluesCompat.registerCompostables();
+
+            BayouBluesBiomes.addBiomeTypes();
+            BayouBluesBiomes.registerBiomesToDictionary();
         });
     }
 
