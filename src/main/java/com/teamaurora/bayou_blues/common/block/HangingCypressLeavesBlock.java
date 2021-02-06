@@ -1,4 +1,4 @@
-package com.teamaurora.bayou_blues.common;
+package com.teamaurora.bayou_blues.common.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
