@@ -8,6 +8,7 @@ import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSig
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.*;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
+import com.teamaurora.bayou_blues.common.HangingCypressLeavesBlock;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -52,4 +53,5 @@ public class BayouBluesBlocks {
 
     public static final RegistryObject<Block> CYPRESS_BEEHIVE = HELPER.createCompatBlock("buzzier_bees", "cypress_beehive", ()->new AbnormalsBeehiveBlock(Block.Properties.from(Blocks.BEEHIVE)), ItemGroup.DECORATIONS);
 
+    public static final RegistryObject<Block> HANGING_CYPRESS_LEAVES = HELPER.createBlock("hanging_cypress_leaves", ()->new HangingCypressLeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)), ItemGroup.DECORATIONS);
 }
