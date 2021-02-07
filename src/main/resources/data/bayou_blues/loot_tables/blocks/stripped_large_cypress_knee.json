@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "bayou_blues:large_cypress_knee"
+              "name": "bayou_blues:stripped_large_cypress_knee"
             },
             {
               "type": "minecraft:item",
@@ -43,7 +43,7 @@
                   }
                 }
               ],
-              "name": "bayou_blues:cypress_log"
+              "name": "bayou_blues:stripped_cypress_log"
             }
           ]
         }
@@ -51,7 +51,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "bayou_blues:large_cypress_knee",
+          "block": "bayou_blues:stripped_large_cypress_knee",
           "properties": {
             "half": "lower"
           }
@@ -60,7 +60,7 @@
           "condition": "minecraft:location_check",
           "predicate": {
             "block": {
-              "block": "bayou_blues:large_cypress_knee",
+              "block": "bayou_blues:stripped_large_cypress_knee",
               "state": {
                 "half": "upper"
               }
@@ -93,7 +93,7 @@
                   }
                 }
               ],
-              "name": "bayou_blues:large_cypress_knee"
+              "name": "bayou_blues:stripped_large_cypress_knee"
             },
             {
               "type": "minecraft:item",
@@ -112,7 +112,7 @@
                   }
                 }
               ],
-              "name": "bayou_blues:cypress_log"
+              "name": "bayou_blues:stripped_cypress_log"
             }
           ]
         }
@@ -120,7 +120,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "bayou_blues:large_cypress_knee",
+          "block": "bayou_blues:stripped_large_cypress_knee",
           "properties": {
             "half": "upper"
           }
@@ -129,7 +129,7 @@
           "condition": "minecraft:location_check",
           "predicate": {
             "block": {
-              "block": "bayou_blues:large_cypress_knee",
+              "block": "bayou_blues:stripped_large_cypress_knee",
               "state": {
                 "half": "lower"
               }
