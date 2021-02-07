@@ -2,6 +2,7 @@ package com.teamaurora.bayou_blues.core;
 
 import com.minecraftabnormals.abnormals_core.core.util.registry.RegistryHelper;
 import com.teamaurora.bayou_blues.core.other.BayouBluesCompat;
+import com.teamaurora.bayou_blues.core.other.BayouBluesEvents;
 import com.teamaurora.bayou_blues.core.other.BayouBluesRendering;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBiomes;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
@@ -37,6 +38,7 @@ public class BayouBlues
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        MinecraftForge.EVENT_BUS.register(new BayouBluesEvents());
         event.enqueueWork(() -> {
             BayouBluesFeatures.Configured.registerConfiguredFeatures();
             BayouBluesCompat.registerFlammables();
