@@ -8,6 +8,7 @@ import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSig
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.*;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
+import com.teamaurora.bayou_blues.common.block.CypressBranchBlock;
 import com.teamaurora.bayou_blues.common.block.CypressKneeBlock;
 import com.teamaurora.bayou_blues.common.block.DoubleCypressKneeBlock;
 import com.teamaurora.bayou_blues.common.block.HangingCypressLeavesBlock;
@@ -61,4 +62,6 @@ public class BayouBluesBlocks {
     public static final RegistryObject<Block> CYPRESS_KNEE = HELPER.createBlock("cypress_knee", ()->new CypressKneeBlock(STRIPPED_CYPRESS_KNEE, true, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
     public static final RegistryObject<Block> STRIPPED_LARGE_CYPRESS_KNEE = HELPER.createBlock("stripped_large_cypress_knee", ()->new DoubleCypressKneeBlock(()->Blocks.AIR, false, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
     public static final RegistryObject<Block> LARGE_CYPRESS_KNEE = HELPER.createBlock("large_cypress_knee", ()->new DoubleCypressKneeBlock(STRIPPED_LARGE_CYPRESS_KNEE, true, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD)), ItemGroup.DECORATIONS);
+
+    public static final RegistryObject<Block> CYPRESS_BRANCH = HELPER.createBlock("cypress_branch", ()->new CypressBranchBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().doesNotBlockMovement().sound(SoundType.BAMBOO_SAPLING)), ItemGroup.DECORATIONS);
 }
