@@ -12,11 +12,11 @@ import java.util.Random;
 public class CypressTree extends BigTree {
     @Nullable
     protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean largeHive) {
-        return BayouBluesFeatures.Configured.CYPRESS;
+        return BayouBluesFeatures.Configured.CYPRESS_GROWN;
     }
 
     @Nullable
     protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getHugeTreeFeature(Random randomIn) {
-        return BayouBluesFeatures.Configured.MEGA_CYPRESS;
+        return BayouBluesFeatures.Configured.MEGA_CYPRESS_GROWN;
     }
 }
