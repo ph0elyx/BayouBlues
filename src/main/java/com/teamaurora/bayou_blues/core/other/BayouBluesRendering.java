@@ -18,6 +18,11 @@ public class BayouBluesRendering {
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_LADDER.get(), RenderType.getCutoutMipped());
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.getCutoutMipped());
+
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
     }
 
     public static void registerBlockColors() {
