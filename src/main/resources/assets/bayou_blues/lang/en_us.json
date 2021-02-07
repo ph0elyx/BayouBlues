@@ -30,5 +30,7 @@
 
   "block.bayou_blues.hanging_cypress_leaves": "Hanging Cypress Leaves",
 
-  "_comment1": "Gooseberries"
+  "_comment1": "Gooseberries",
+  "item.bayou_blues.gooseberries": "Gooseberries",
+  "item.bayou_blues.gooseberry_juice": "Gooseberry Juice"
 }
