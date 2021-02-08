@@ -21,7 +21,7 @@ public class BayouBluesItems {
 
     public static class Foods {
         public static final Food GOOSEBERRIES = (new Food.Builder()).hunger(2).saturation(0.2F).build();
-        public static final Food GOOSEBERRY_JUICE = (new Food.Builder()).hunger(5).saturation(0.4F).build();
+        public static final Food GOOSEBERRY_JUICE = (new Food.Builder()).hunger(1).saturation(0.1F).build();
         public static final Food GOOSEBERRY_PIE = (new Food.Builder()).hunger(6).saturation(0.5F).build();
     }
 }
