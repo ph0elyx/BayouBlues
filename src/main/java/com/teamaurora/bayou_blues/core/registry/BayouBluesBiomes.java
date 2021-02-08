@@ -4,6 +4,7 @@ import com.minecraftabnormals.abnormals_core.core.util.BiomeUtil;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BiomeSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
 import com.teamaurora.bayou_blues.core.BayouBlues;
+import com.teamaurora.bayou_blues.core.BayouBluesConfig;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilders;
@@ -23,8 +24,8 @@ public class BayouBluesBiomes {
     }
 
     public static void registerBiomesToDictionary() {
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BAYOU.getKey(), 1));
-        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BAYOU_HILLS.getKey(), 0));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BAYOU.getKey(), BayouBluesConfig.COMMON.bayouWeight.get()));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BAYOU_HILLS.getKey(), BayouBluesConfig.COMMON.bayouHillsWeight.get()));
     }
 
     public static void addBiomeTypes() {
