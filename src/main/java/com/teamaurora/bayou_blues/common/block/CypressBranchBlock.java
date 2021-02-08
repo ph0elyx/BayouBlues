@@ -16,6 +16,8 @@ import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
@@ -28,6 +30,10 @@ import java.util.Random;
 public class CypressBranchBlock extends Block implements IGrowable {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_0_2;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    protected static final VoxelShape SHAPE_NORTH = Block.makeCuboidShape(4.0D, 4.0D, 3.0D, 12.0D, 12.0D, 16.0D);
+    protected static final VoxelShape SHAPE_EAST = Block.makeCuboidShape(0.0D, 4.0D, 4.0D, 13.0D, 12.0D, 12.0D);
+    protected static final VoxelShape SHAPE_SOUTH = Block.makeCuboidShape(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 13.0D);
+    protected static final VoxelShape SHAPE_WEST = Block.makeCuboidShape(3.0D, 4.0D, 4.0D, 16.0D, 12.0D, 12.0D);
 
     public CypressBranchBlock(AbstractBlock.Properties properties) {
         super(properties);
@@ -47,6 +53,20 @@ public class CypressBranchBlock extends Block implements IGrowable {
     @Override
     public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
         worldIn.setBlockState(pos, state.with(AGE, state.get(AGE) + 1), 2);
+    }
+
+    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+        switch (state.get(FACING)) {
+            case NORTH:
+                return SHAPE_NORTH;
+            case EAST:
+                return SHAPE_EAST;
+            case SOUTH:
+                return SHAPE_SOUTH;
+            case WEST:
+                return SHAPE_WEST;
+        }
+        return null;
     }
 
     @Override
