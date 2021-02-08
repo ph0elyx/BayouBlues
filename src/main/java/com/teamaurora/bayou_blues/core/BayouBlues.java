@@ -46,6 +46,7 @@ public class BayouBlues
 
             BayouBluesBiomes.addBiomeTypes();
             BayouBluesBiomes.registerBiomesToDictionary();
+            BayouBluesBiomes.addHillBiome();
         });
     }
 

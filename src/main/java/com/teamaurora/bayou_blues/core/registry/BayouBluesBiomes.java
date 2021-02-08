@@ -1,6 +1,8 @@
 package com.teamaurora.bayou_blues.core.registry;
 
+import com.minecraftabnormals.abnormals_core.core.util.BiomeUtil;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BiomeSubRegistryHelper;
+import com.mojang.datafixers.util.Pair;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.*;
@@ -14,13 +16,20 @@ public class BayouBluesBiomes {
     private static final BiomeSubRegistryHelper HELPER = BayouBlues.REGISTRY_HELPER.getBiomeSubHelper();
 
     public static final BiomeSubRegistryHelper.KeyedBiome BAYOU = HELPER.createBiome("bayou", () -> makeBayouBiome(-0.1F, 0.2F));
+    public static final BiomeSubRegistryHelper.KeyedBiome BAYOU_HILLS = HELPER.createBiome("bayou_hills", () -> makeBayouBiome(0.0F, 0.4F));
+
+    public static void addHillBiome() {
+        BiomeUtil.addHillBiome(BAYOU.getKey(), Pair.of(BAYOU_HILLS.getKey(), 1));
+    }
 
     public static void registerBiomesToDictionary() {
         BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BAYOU.getKey(), 1));
+        BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(BAYOU_HILLS.getKey(), 0));
     }
 
     public static void addBiomeTypes() {
         BiomeDictionary.addTypes(BAYOU.getKey(), BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.LUSH, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(BAYOU_HILLS.getKey(), BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.LUSH, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
     }
 
     private static Biome makeBayouBiome(float depth, float scale) {
