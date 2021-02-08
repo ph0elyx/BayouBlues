@@ -14,7 +14,7 @@ apply plugin: 'maven-publish'
 
 version = "${minecraft_version}-${mod_version}"
 group = 'com.teamaurora.bayou_blues'
-archivesBaseName = 'Bayou Blues'
+archivesBaseName = 'Bayou-Blues'
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
