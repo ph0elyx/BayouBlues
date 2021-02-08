@@ -17,9 +17,11 @@ public class BayouBluesItems {
 
     public static final RegistryObject<Item> GOOSEBERRIES = HELPER.createItem("gooseberries", ()->new Item(new Item.Properties().food(Foods.GOOSEBERRIES).group(ItemGroup.FOOD)));
     public static final RegistryObject<Item> GOOSEBERRY_JUICE = HELPER.createItem("gooseberry_juice", ()->new DrinkItem(new Item.Properties().food(Foods.GOOSEBERRY_JUICE).maxStackSize(16).group(ItemGroup.FOOD)));
+    public static final RegistryObject<Item> GOOSEBERRY_PIE = HELPER.createItem("gooseberry_pie", ()->new Item(new Item.Properties().food(Foods.GOOSEBERRY_PIE).group(ItemGroup.FOOD)));
 
     public static class Foods {
         public static final Food GOOSEBERRIES = (new Food.Builder()).hunger(2).saturation(0.2F).build();
         public static final Food GOOSEBERRY_JUICE = (new Food.Builder()).hunger(5).saturation(0.4F).build();
+        public static final Food GOOSEBERRY_PIE = (new Food.Builder()).hunger(6).saturation(0.5F).build();
     }
 }

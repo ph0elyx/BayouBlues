@@ -37,5 +37,11 @@
 
   "_comment1": "Gooseberries",
   "item.bayou_blues.gooseberries": "Gooseberries",
-  "item.bayou_blues.gooseberry_juice": "Gooseberry Juice"
+  "item.bayou_blues.gooseberry_juice": "Gooseberry Juice",
+  "item.bayou_blues.gooseberry_pie": "Gooseberry Pie",
+
+  "block.bayou_blues.cypress_branch": "Cypress Branch",
+
+  "_comment2": "Misc",
+  "biome.bayou_blues.bayou": "Bayou"
 }
