@@ -8,7 +8,7 @@ modId="bayou_blues"
 version="${file.jarVersion}"
 displayName="Bayou Blues"
 displayURL="https://discord.gg/BgE4EpP"
-#logoFile="logo.png"
+logoFile="logo.png"
 authors="Team Aurora"
 description="A swampy new biome!"
 
