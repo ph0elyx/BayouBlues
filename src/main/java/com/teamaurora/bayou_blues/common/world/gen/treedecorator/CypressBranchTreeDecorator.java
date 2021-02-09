@@ -34,7 +34,7 @@ public class CypressBranchTreeDecorator extends TreeDecorator {
     public void func_225576_a_(ISeedReader world, Random rand, List<BlockPos> logs, List<BlockPos> leaves, Set<BlockPos> updatedBlocks, MutableBoundingBox bounds) {
 
         for (BlockPos pos : logs) {
-            if (rand.nextInt(150) == 0) {
+            if (rand.nextInt(25) == 0) {
                 Direction dir = Direction.byHorizontalIndex(rand.nextInt(4));
                 if (world.getBlockState(pos.offset(dir)).isAir()) {
                     int i = 0;

@@ -36,13 +36,16 @@ public class TreeMossTreeDecorator extends TreeDecorator {
                 boolean flag = true;
                 int rand1 = rand.nextInt(3) + 1;
                 for (int i = 0; i < rand1; i++) {
-                    if (!TreeUtil.isAirOrLeaves(world, pos.down())) {
+                    if (!TreeUtil.isAirOrLeaves(world, pos.down(i + 1))) {
                         flag = false;
                         break;
                     }
-                    world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState(), 3);
                 }
+                if (!TreeUtil.isAir(world, pos.down(rand1 + 1))) flag = false;
                 if (flag) {
+                    for (int i = 0; i < rand1; i++) {
+                        world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState(), 3);
+                    }
                     int rand2 = rand.nextInt(6) + 1;
                     for (int i = 0; i < rand2; i++) {
                         if (!world.isAirBlock(pos.down(rand1 + i + 1))) {
@@ -70,9 +73,12 @@ public class TreeMossTreeDecorator extends TreeDecorator {
                             flag = false;
                             break;
                         }
-                        world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState(), 3);
                     }
+                    if (!TreeUtil.isAir(world, pos.down(rand1 + 1))) flag = false;
                     if (flag) {
+                        for (int i = 0; i < rand1; i++) {
+                            world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState(), 3);
+                        }
                         int rand2 = rand.nextInt(4) + 1;
                         for (int i = 0; i < rand2; i++) {
                             if (!world.isAirBlock(pos.down(rand1 + i + 1))) {
