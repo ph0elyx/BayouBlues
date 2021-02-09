@@ -50,5 +50,7 @@
   "biome.bayou_blues.bayou": "Bayou",
   "biome.bayou_blues.bayou_hills": "Bayou Hills",
 
-  "block.bayou_blues.algae": "Algae"
+  "block.bayou_blues.algae": "Algae",
+  "block.bayou_blues.tree_moss_block": "Tree Moss Block",
+  "block.bayou_blues.tree_moss": "Tree Moss"
 }

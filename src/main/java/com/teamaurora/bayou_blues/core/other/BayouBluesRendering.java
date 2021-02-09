@@ -27,6 +27,8 @@ public class BayouBluesRendering {
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.getCutout());
 
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.ALGAE.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.TREE_MOSS_BLOCK.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.TREE_MOSS.get(), RenderType.getCutout());
     }
 
     public static void registerBlockColors() {
