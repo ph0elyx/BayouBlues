@@ -14,19 +14,19 @@ import java.util.Arrays;
 
 public class BayouBluesRendering {
     public static void setupRenderLayer() {
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_SAPLING.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_SAPLING.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_LADDER.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_LADDER.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.getCutoutMipped());
 
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_CYPRESS_KNEE.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(), RenderType.getCutout());
 
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.getCutout());
 
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.ALGAE.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.ALGAE.get(), RenderType.getCutout());
     }
 
     public static void registerBlockColors() {
