@@ -2,6 +2,7 @@ package com.teamaurora.bayou_blues.core.other;
 
 import com.minecraftabnormals.abnormals_core.core.util.DataUtil;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
+import com.teamaurora.bayou_blues.core.registry.BayouBluesItems;
 
 public class BayouBluesCompat {
     public static void registerCompostables() {
@@ -9,7 +10,9 @@ public class BayouBluesCompat {
         DataUtil.registerCompostable(BayouBluesBlocks.CYPRESS_SAPLING.get(), 0.3F);
         DataUtil.registerCompostable(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), 0.3F);
 
-        // TODO: add gooseberry shit + algae here
+        DataUtil.registerCompostable(BayouBluesItems.GOOSEBERRIES.get(), 0.65F);
+        DataUtil.registerCompostable(BayouBluesBlocks.GOOSEBERRY_SACK.get(), 1.0F);
+        DataUtil.registerCompostable(BayouBluesBlocks.ALGAE.get(), 0.15F);
     }
 
     public static void registerFlammables() {

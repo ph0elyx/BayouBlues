@@ -1,10 +1,7 @@
 package com.teamaurora.bayou_blues.core.registry;
 
 import com.google.common.collect.ImmutableList;
-import com.teamaurora.bayou_blues.common.world.gen.feature.CypressFeature;
-import com.teamaurora.bayou_blues.common.world.gen.feature.MegaCypressFeature;
-import com.teamaurora.bayou_blues.common.world.gen.feature.WaterCypressFeature;
-import com.teamaurora.bayou_blues.common.world.gen.feature.WaterMegaCypressFeature;
+import com.teamaurora.bayou_blues.common.world.gen.feature.*;
 import com.teamaurora.bayou_blues.common.world.gen.treedecorator.CypressBranchTreeDecorator;
 import com.teamaurora.bayou_blues.common.world.gen.treedecorator.CypressKneesTreeDecorator;
 import com.teamaurora.bayou_blues.common.world.gen.treedecorator.HangingCypressLeavesTreeDecorator;
@@ -19,6 +16,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.BushFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.treedecorator.LeaveVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
@@ -38,6 +36,8 @@ public class BayouBluesFeatures {
     public static final RegistryObject<Feature<BaseTreeFeatureConfig>> WATER_CYPRESS_TREE = FEATURES.register("water_cypress_tree", ()->new WaterCypressFeature(BaseTreeFeatureConfig.CODEC));
     public static final RegistryObject<Feature<BaseTreeFeatureConfig>> WATER_MEGA_CYPRESS_TREE = FEATURES.register("water_mega_cypress_tree", ()->new WaterMegaCypressFeature(BaseTreeFeatureConfig.CODEC));
 
+    public static final RegistryObject<Feature<BlockStateFeatureConfig>> LARGE_PATCH = FEATURES.register("large_patch", ()->new LargePatchFeature(BlockStateFeatureConfig.field_236455_a_));
+
     public static final RegistryObject<TreeDecoratorType<?>> HANGING_CYPRESS_LEAVES = TREE_DECORATORS.register("hanging_cypress_leaves", () -> new TreeDecoratorType<>(HangingCypressLeavesTreeDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<?>> CYPRESS_KNEES = TREE_DECORATORS.register("cypress_knees", () -> new TreeDecoratorType<>(CypressKneesTreeDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<?>> CYPRESS_BRANCH = TREE_DECORATORS.register("cypress_branch", () -> new TreeDecoratorType<>(CypressBranchTreeDecorator.CODEC));
@@ -46,6 +46,9 @@ public class BayouBluesFeatures {
         public static final BlockState CYPRESS_LOG = BayouBluesBlocks.CYPRESS_LOG.get().getDefaultState();
         public static final BlockState CYPRESS_LEAVES = BayouBluesBlocks.CYPRESS_LEAVES.get().getDefaultState();
         public static final BlockState HANGING_CYPRESS_LEAVES = BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get().getDefaultState();
+
+        public static final BlockState ALGAE = BayouBluesBlocks.ALGAE.get().getDefaultState();
+        public static final BlockState CYPRESS_LEAF_CARPET = BayouBluesBlocks.CYPRESS_LEAF_CARPET.get().getDefaultState();
     }
 
     public static final class Configs {
@@ -87,6 +90,8 @@ public class BayouBluesFeatures {
                 new BushFoliagePlacer(FeatureSpread.func_242252_a(2),FeatureSpread.func_242252_a(1), 2),
                 new StraightTrunkPlacer(1, 0, 0), new TwoLayerFeature(0, 0, 0)
         )).func_236702_a_(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES).build();
+
+        public static final BlockStateFeatureConfig ALGAE_PATCH_CONFIG = new BlockStateFeatureConfig(BlockStates.ALGAE);
     }
 
     public static final class Configured {
@@ -99,6 +104,8 @@ public class BayouBluesFeatures {
         public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> WATER_MEGA_CYPRESS = BayouBluesFeatures.WATER_MEGA_CYPRESS_TREE.get().withConfiguration(Configs.WATER_CYPRESS_TREE_CONFIG);
 
         public static final ConfiguredFeature<?, ?> CYPRESS_BUSH = Feature.TREE.withConfiguration(Configs.CYPRESS_BUSH_CONFIG);
+
+        public static final ConfiguredFeature<?, ?> ALGAE = BayouBluesFeatures.LARGE_PATCH.get().withConfiguration(Configs.ALGAE_PATCH_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.CHANCE.configure(new ChanceConfig(2)));
 
         public static final ConfiguredFeature<?, ?> TREES_BAYOU = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(CYPRESS_BUSH.withChance(0.35F), MEGA_CYPRESS_KNEES.withChance(0.333333334F)), CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(20, 0.1F, 1)));
         public static final ConfiguredFeature<?, ?> TREES_BAYOU_WATER = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(WATER_MEGA_CYPRESS.withChance(0.333333334F)), WATER_CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(9, 0.1F, 1)));
@@ -117,6 +124,8 @@ public class BayouBluesFeatures {
             register("water_mega_cypress", WATER_MEGA_CYPRESS);
 
             register("cypress_bush", CYPRESS_BUSH);
+
+            register("algae", ALGAE);
 
             register("trees_bayou", TREES_BAYOU);
             register("trees_bayou_water", TREES_BAYOU_WATER);
