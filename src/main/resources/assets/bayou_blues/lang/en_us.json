@@ -45,5 +45,7 @@
 
   "_comment2": "Misc",
   "biome.bayou_blues.bayou": "Bayou",
-  "biome.bayou_blues.bayou_hills": "Bayou Hills"
+  "biome.bayou_blues.bayou_hills": "Bayou Hills",
+
+  "block.bayou_blues.algae": "Algae"
 }

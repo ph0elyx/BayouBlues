@@ -8,6 +8,8 @@ public class BayouBluesCompat {
         DataUtil.registerCompostable(BayouBluesBlocks.CYPRESS_LEAVES.get(), 0.3F);
         DataUtil.registerCompostable(BayouBluesBlocks.CYPRESS_SAPLING.get(), 0.3F);
         DataUtil.registerCompostable(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), 0.3F);
+
+        // TODO: add gooseberry shit + algae here
     }
 
     public static void registerFlammables() {

@@ -25,6 +25,8 @@ public class BayouBluesRendering {
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(), RenderType.getCutoutMipped());
 
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.getCutoutMipped());
+
+        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.ALGAE.get(), RenderType.getCutoutMipped());
     }
 
     public static void registerBlockColors() {

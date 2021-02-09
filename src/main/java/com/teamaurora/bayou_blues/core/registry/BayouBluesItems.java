@@ -1,6 +1,7 @@
 package com.teamaurora.bayou_blues.core.registry;
 
 import com.minecraftabnormals.abnormals_core.core.util.registry.ItemSubRegistryHelper;
+import com.teamaurora.bayou_blues.common.item.AlgaeItem;
 import com.teamaurora.bayou_blues.common.item.DrinkItem;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import net.minecraft.item.Food;
@@ -18,6 +19,8 @@ public class BayouBluesItems {
     public static final RegistryObject<Item> GOOSEBERRIES = HELPER.createItem("gooseberries", ()->new Item(new Item.Properties().food(Foods.GOOSEBERRIES).group(ItemGroup.FOOD)));
     public static final RegistryObject<Item> GOOSEBERRY_JUICE = HELPER.createItem("gooseberry_juice", ()->new DrinkItem(new Item.Properties().food(Foods.GOOSEBERRY_JUICE).maxStackSize(16).group(ItemGroup.FOOD)));
     public static final RegistryObject<Item> GOOSEBERRY_PIE = HELPER.createItem("gooseberry_pie", ()->new Item(new Item.Properties().food(Foods.GOOSEBERRY_PIE).group(ItemGroup.FOOD)));
+
+    public static final RegistryObject<Item> ALGAE = HELPER.createItem("algae", ()->new AlgaeItem(BayouBluesBlocks.ALGAE.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
     public static class Foods {
         public static final Food GOOSEBERRIES = (new Food.Builder()).hunger(2).saturation(0.2F).build();

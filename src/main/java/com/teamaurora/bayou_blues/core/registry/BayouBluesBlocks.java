@@ -8,10 +8,7 @@ import com.minecraftabnormals.abnormals_core.common.blocks.sign.AbnormalsWallSig
 import com.minecraftabnormals.abnormals_core.common.blocks.wood.*;
 import com.minecraftabnormals.abnormals_core.core.util.registry.BlockSubRegistryHelper;
 import com.mojang.datafixers.util.Pair;
-import com.teamaurora.bayou_blues.common.block.CypressBranchBlock;
-import com.teamaurora.bayou_blues.common.block.CypressKneeBlock;
-import com.teamaurora.bayou_blues.common.block.DoubleCypressKneeBlock;
-import com.teamaurora.bayou_blues.common.block.HangingCypressLeavesBlock;
+import com.teamaurora.bayou_blues.common.block.*;
 import com.teamaurora.bayou_blues.common.block.trees.CypressTree;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import net.minecraft.block.*;
@@ -65,4 +62,6 @@ public class BayouBluesBlocks {
 
     public static final RegistryObject<Block> CYPRESS_BRANCH = HELPER.createBlock("cypress_branch", ()->new CypressBranchBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().doesNotBlockMovement().sound(SoundType.BAMBOO_SAPLING)), ItemGroup.DECORATIONS);
     public static final RegistryObject<Block> GOOSEBERRY_SACK = HELPER.createCompatBlock("quark", "gooseberry_sack", ()->new Block(Block.Properties.create(Material.WOOL, MaterialColor.GREEN).hardnessAndResistance(0.5F).sound(SoundType.CLOTH)), ItemGroup.DECORATIONS);
+
+    public static final RegistryObject<Block> ALGAE = HELPER.createBlockNoItem("algae", ()->new AlgaeBlock(AbstractBlock.Properties.create(Material.PLANTS).zeroHardnessAndResistance().sound(SoundType.LILY_PADS).notSolid().doesNotBlockMovement()));
 }
