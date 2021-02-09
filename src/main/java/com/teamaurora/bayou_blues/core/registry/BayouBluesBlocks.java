@@ -67,5 +67,5 @@ public class BayouBluesBlocks {
     // other
     public static final RegistryObject<Block> ALGAE = HELPER.createBlockNoItem("algae", ()->new AlgaeBlock(AbstractBlock.Properties.create(Material.PLANTS).zeroHardnessAndResistance().sound(SoundType.LILY_PADS).notSolid().doesNotBlockMovement()));
     public static final RegistryObject<Block> TREE_MOSS_BLOCK = HELPER.createBlockNoItem("tree_moss_block", ()->new TreeMossBlockBlock(AbstractBlock.Properties.create(Material.PLANTS).hardnessAndResistance(0.1F).sound(SoundType.PLANT).notSolid()));
-    public static final RegistryObject<Block> TREE_MOSS = HELPER.createBlockNoItem("tree_moss", ()->new TreeMossBlock(AbstractBlock.Properties.create(Material.PLANTS).zeroHardnessAndResistance().sound(SoundType.PLANT).notSolid()));
+    public static final RegistryObject<Block> TREE_MOSS = HELPER.createBlockNoItem("tree_moss", ()->new TreeMossBlock(AbstractBlock.Properties.create(Material.PLANTS).zeroHardnessAndResistance().sound(SoundType.PLANT).notSolid().doesNotBlockMovement()));
 }

@@ -9,6 +9,7 @@ import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoubleBlockHalf;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -47,7 +48,7 @@ public class TreeMossBlock extends Block implements IGrowable {
 
     public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
         BlockState stateUp = worldIn.getBlockState(pos.up());
-        return stateUp.isSolid() || stateUp.getBlock() == this || stateUp.getBlock() == BayouBluesBlocks.TREE_MOSS_BLOCK.get();
+        return stateUp.isSolid() || stateUp.getBlock() == this || stateUp.isIn(BlockTags.LEAVES) || stateUp.getBlock() == BayouBluesBlocks.TREE_MOSS_BLOCK.get();
     }
 
     public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
