@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SaplingBlock;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
@@ -64,6 +65,9 @@ public class WaterCypressFeature extends Feature<BaseTreeFeatureConfig> {
         for (int i = 0; i <= waterY - surfaceY; i++) {
             for (int x = -1; x <= 1; x++) {
                 for (int z = -1; z <= 1; z++) {
+                    if (i == 0 && worldIn.getFluidState(bottom.add(x, -1, z)).getFluid() == Fluids.WATER) {
+                        return false;
+                    }
                     logs.add(new DirectionalBlockPos(bottom.add(x, i, z), Direction.UP));
                 }
             }
