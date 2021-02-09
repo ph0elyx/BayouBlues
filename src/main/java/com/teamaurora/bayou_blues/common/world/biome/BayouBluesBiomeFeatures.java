@@ -41,9 +41,10 @@ public class BayouBluesBiomeFeatures {
         DefaultBiomeFeatures.withOverworldOres(builder);
         DefaultBiomeFeatures.withDisks(builder);
 
+        builder.withFeature(GenerationStage.Decoration.TOP_LAYER_MODIFICATION, BayouBluesFeatures.Configured.PODZOL);
+
         withBayouVegetation(builder);
 
-        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.TREES_BAYOU_WATER);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.SEAGRASS_SWAMP);
 
         DefaultBiomeFeatures.withNormalMushroomGeneration(builder);
@@ -59,8 +60,10 @@ public class BayouBluesBiomeFeatures {
     private static void withBayouVegetation(BiomeGenerationSettingsBuilder builder) {
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.ALGAE);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.TREES_BAYOU);
-        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.FLOWER_SWAMP);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.TREES_BAYOU_WATER);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_GRASS_NORMAL);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.FALLEN_CYPRESS_LEAVES);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.FLOWER_SWAMP);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_WATERLILLY);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.BROWN_MUSHROOM_SWAMP);

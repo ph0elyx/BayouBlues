@@ -37,6 +37,9 @@ public class BayouBluesFeatures {
     public static final RegistryObject<Feature<BaseTreeFeatureConfig>> WATER_MEGA_CYPRESS_TREE = FEATURES.register("water_mega_cypress_tree", ()->new WaterMegaCypressFeature(BaseTreeFeatureConfig.CODEC));
 
     public static final RegistryObject<Feature<BlockStateFeatureConfig>> LARGE_PATCH = FEATURES.register("large_patch", ()->new LargePatchFeature(BlockStateFeatureConfig.field_236455_a_));
+    public static final RegistryObject<Feature<BlockStateFeatureConfig>> LARGE_LAND_PATCH = FEATURES.register("large_land_patch", ()->new LargeLandPatchFeature(BlockStateFeatureConfig.field_236455_a_));
+
+    public static final RegistryObject<Feature<NoFeatureConfig>> PODZOL_PATCH = FEATURES.register("podzol_patch", ()->new PodzolPatchFeature(NoFeatureConfig.field_236558_a_));
 
     public static final RegistryObject<TreeDecoratorType<?>> HANGING_CYPRESS_LEAVES = TREE_DECORATORS.register("hanging_cypress_leaves", () -> new TreeDecoratorType<>(HangingCypressLeavesTreeDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<?>> CYPRESS_KNEES = TREE_DECORATORS.register("cypress_knees", () -> new TreeDecoratorType<>(CypressKneesTreeDecorator.CODEC));
@@ -84,6 +87,14 @@ public class BayouBluesFeatures {
                 new TwoLayerFeature(0, 0, 0)
         )).setIgnoreVines().setMaxWaterDepth(3).setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, LeaveVineTreeDecorator.field_236871_b_)).build();
 
+        public static final BaseTreeFeatureConfig WATER_CYPRESS_KNEE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(
+                new SimpleBlockStateProvider(BlockStates.CYPRESS_LOG),
+                new SimpleBlockStateProvider(BlockStates.CYPRESS_LEAVES),
+                new BlobFoliagePlacer(FeatureSpread.func_242252_a(0), FeatureSpread.func_242252_a(0), 0),
+                new StraightTrunkPlacer(0, 0, 0),
+                new TwoLayerFeature(0, 0, 0)
+        )).setIgnoreVines().setMaxWaterDepth(3).setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, LeaveVineTreeDecorator.field_236871_b_, CypressKneesTreeDecorator.DECORATOR)).build();
+
         public static final BaseTreeFeatureConfig CYPRESS_BUSH_CONFIG = (new BaseTreeFeatureConfig.Builder(
                 new SimpleBlockStateProvider(BlockStates.CYPRESS_LOG),
                 new SimpleBlockStateProvider(BlockStates.CYPRESS_LEAVES),
@@ -92,6 +103,7 @@ public class BayouBluesFeatures {
         )).func_236702_a_(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES).build();
 
         public static final BlockStateFeatureConfig ALGAE_PATCH_CONFIG = new BlockStateFeatureConfig(BlockStates.ALGAE);
+        public static final BlockStateFeatureConfig CYPRESS_LEAF_CARPET_PATCH_CONFIG = new BlockStateFeatureConfig(BlockStates.CYPRESS_LEAF_CARPET);
     }
 
     public static final class Configured {
@@ -101,11 +113,14 @@ public class BayouBluesFeatures {
         public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> MEGA_CYPRESS = BayouBluesFeatures.MEGA_CYPRESS_TREE.get().withConfiguration(Configs.CYPRESS_TREE_CONFIG);
         public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> MEGA_CYPRESS_KNEES = BayouBluesFeatures.MEGA_CYPRESS_TREE.get().withConfiguration(Configs.CYPRESS_KNEE_TREE_CONFIG);
         public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> WATER_CYPRESS = BayouBluesFeatures.WATER_CYPRESS_TREE.get().withConfiguration(Configs.WATER_CYPRESS_TREE_CONFIG);
-        public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> WATER_MEGA_CYPRESS = BayouBluesFeatures.WATER_MEGA_CYPRESS_TREE.get().withConfiguration(Configs.WATER_CYPRESS_TREE_CONFIG);
+        public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> WATER_MEGA_CYPRESS = BayouBluesFeatures.WATER_MEGA_CYPRESS_TREE.get().withConfiguration(Configs.WATER_CYPRESS_KNEE_TREE_CONFIG);
 
         public static final ConfiguredFeature<?, ?> CYPRESS_BUSH = Feature.TREE.withConfiguration(Configs.CYPRESS_BUSH_CONFIG);
 
         public static final ConfiguredFeature<?, ?> ALGAE = BayouBluesFeatures.LARGE_PATCH.get().withConfiguration(Configs.ALGAE_PATCH_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.CHANCE.configure(new ChanceConfig(2)));
+        public static final ConfiguredFeature<?, ?> FALLEN_CYPRESS_LEAVES = BayouBluesFeatures.LARGE_LAND_PATCH.get().withConfiguration(Configs.CYPRESS_LEAF_CARPET_PATCH_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.CHANCE.configure(new ChanceConfig(6)));
+
+        public static final ConfiguredFeature<?, ?> PODZOL = BayouBluesFeatures.PODZOL_PATCH.get().withConfiguration(NoFeatureConfig.field_236559_b_).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1)));
 
         public static final ConfiguredFeature<?, ?> TREES_BAYOU = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(CYPRESS_BUSH.withChance(0.35F), MEGA_CYPRESS_KNEES.withChance(0.333333334F)), CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(20, 0.1F, 1)));
         public static final ConfiguredFeature<?, ?> TREES_BAYOU_WATER = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(WATER_MEGA_CYPRESS.withChance(0.333333334F)), WATER_CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(9, 0.1F, 1)));
@@ -126,6 +141,9 @@ public class BayouBluesFeatures {
             register("cypress_bush", CYPRESS_BUSH);
 
             register("algae", ALGAE);
+            register("fallen_cypress_leaves", FALLEN_CYPRESS_LEAVES);
+
+            register("podzol", PODZOL);
 
             register("trees_bayou", TREES_BAYOU);
             register("trees_bayou_water", TREES_BAYOU_WATER);
