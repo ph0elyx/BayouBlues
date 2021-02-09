@@ -35,6 +35,7 @@ public class CypressFeature extends Feature<BaseTreeFeatureConfig> {
     @Override
     public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
         int height = rand.nextInt(5) + 9;
+        boolean bald = rand.nextInt(15) == 0;
         if (position.getY() <= 0 || position.getY() + height > worldIn.getHeight() - 1) {
             return false;
         }
@@ -58,9 +59,11 @@ public class CypressFeature extends Feature<BaseTreeFeatureConfig> {
             disc2H(position.up(x).offset(dir,2), leaves, rand);
             disc1(position.up(x+1).offset(dir,2), leaves);
         }
-        disc1(position.up(height - 1), leaves);
-        disc3H(position.up(height), leaves, rand);
-        disc2(position.up(height + 1), leaves);
+        if (!bald) {
+            disc1(position.up(height - 1), leaves);
+            disc3H(position.up(height), leaves, rand);
+            disc2(position.up(height + 1), leaves);
+        }
 
         List<BlockPos> leavesClean = cleanLeavesArray(leaves, logs);
 

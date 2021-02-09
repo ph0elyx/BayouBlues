@@ -34,6 +34,7 @@ public class MegaCypressFeature extends Feature<BaseTreeFeatureConfig> {
     @Override
     public boolean generate(ISeedReader worldIn, ChunkGenerator generator, Random rand, BlockPos position, BaseTreeFeatureConfig config) {
         int height = rand.nextInt(7) + 15;
+        boolean bald = rand.nextInt(15) == 0;
         if (position.getY() <= 0 || position.getY() + height > worldIn.getHeight() - 1) {
             return false;
         }
@@ -70,10 +71,27 @@ public class MegaCypressFeature extends Feature<BaseTreeFeatureConfig> {
                 addBranch(position.add(0,x,rand.nextInt(2)), dir, logs, leaves, rand);
             }
         }
-        canopyDisc1(position.up(height - 2), leaves);
-        canopyDisc3Bottom(position.up(height - 1), leaves, rand);
-        canopyDisc3Top(position.up(height), leaves);
-        canopyDisc1(position.up(height + 1), leaves);
+        if (bald) {
+            int variant = rand.nextInt(4);
+            switch (variant) {
+                case 0:
+                    logs.add(new DirectionalBlockPos(position.up(height+1), Direction.UP));
+                    break;
+                case 1:
+                    logs.add(new DirectionalBlockPos(position.add(1, height+1, 0), Direction.UP));
+                    break;
+                case 2:
+                    logs.add(new DirectionalBlockPos(position.add(0, height+1, 1), Direction.UP));
+                    break;
+                case 3:
+                    logs.add(new DirectionalBlockPos(position.add(1, height+1, 1), Direction.UP));
+            }
+        } else {
+            canopyDisc1(position.up(height - 2), leaves);
+            canopyDisc3Bottom(position.up(height - 1), leaves, rand);
+            canopyDisc3Top(position.up(height), leaves);
+            canopyDisc1(position.up(height + 1), leaves);
+        }
 
 
         List<BlockPos> leavesClean = cleanLeavesArray(leaves, logs);
