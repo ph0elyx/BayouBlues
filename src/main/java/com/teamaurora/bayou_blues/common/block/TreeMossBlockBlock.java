@@ -7,8 +7,9 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
+import net.minecraftforge.common.IForgeShearable;
 
-public class TreeMossBlockBlock extends Block {
+public class TreeMossBlockBlock extends Block implements IForgeShearable {
 
     public TreeMossBlockBlock(Properties properties) {
         super(properties);

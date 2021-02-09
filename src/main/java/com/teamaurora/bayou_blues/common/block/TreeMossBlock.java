@@ -4,6 +4,7 @@ import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.IGrowable;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -16,14 +17,32 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 
-public class TreeMossBlock extends Block {
+import java.util.Random;
+
+public class TreeMossBlock extends Block implements IGrowable {
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
 
     public TreeMossBlock(Properties properties) {
         super(properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(HALF, DoubleBlockHalf.LOWER));
+    }
+
+    @Override
+    public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
+        return worldIn.getBlockState(pos.down()).isAir();
+    }
+
+    @Override
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
+        return true;
+    }
+
+    @Override
+    public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
+        worldIn.setBlockState(pos.down(), this.getDefaultState());
     }
 
     public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {

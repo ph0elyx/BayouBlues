@@ -10,7 +10,7 @@
       "shade": false,
       "faces": {
         "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#branch" },
-        "west": { "uv": [ 16, 16, 0, 0 ], "texture": "#branch" }
+        "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#branch" }
       }
     }
   ]

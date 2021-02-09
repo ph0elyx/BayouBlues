@@ -3,7 +3,10 @@ package com.teamaurora.bayou_blues.core.registry;
 import com.minecraftabnormals.abnormals_core.core.util.registry.ItemSubRegistryHelper;
 import com.teamaurora.bayou_blues.common.item.AlgaeItem;
 import com.teamaurora.bayou_blues.common.item.DrinkItem;
+import com.teamaurora.bayou_blues.common.item.TreeMossBlockItem;
+import com.teamaurora.bayou_blues.common.item.TreeMossItem;
 import com.teamaurora.bayou_blues.core.BayouBlues;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -21,6 +24,8 @@ public class BayouBluesItems {
     public static final RegistryObject<Item> GOOSEBERRY_PIE = HELPER.createItem("gooseberry_pie", ()->new Item(new Item.Properties().food(Foods.GOOSEBERRY_PIE).group(ItemGroup.FOOD)));
 
     public static final RegistryObject<Item> ALGAE = HELPER.createItem("algae", ()->new AlgaeItem(BayouBluesBlocks.ALGAE.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> TREE_MOSS = HELPER.createItem("tree_moss", ()->new TreeMossItem(BayouBluesBlocks.TREE_MOSS.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> TREE_MOSS_BLOCK = HELPER.createItem("tree_moss_block", ()->new TreeMossBlockItem(BayouBluesBlocks.TREE_MOSS_BLOCK.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
     public static class Foods {
         public static final Food GOOSEBERRIES = (new Food.Builder()).hunger(2).saturation(0.2F).build();

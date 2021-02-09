@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "bayou_blues:block/cross_ao",
   "textures": {
     "cross": "bayou_blues:block/tree_moss_top"
   }
