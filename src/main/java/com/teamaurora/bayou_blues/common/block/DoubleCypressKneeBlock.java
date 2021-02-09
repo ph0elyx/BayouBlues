@@ -31,9 +31,9 @@ import java.util.function.Supplier;
 public class DoubleCypressKneeBlock extends Block implements IWaterLoggable {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
-    protected static final VoxelShape SHAPE_BOTTOM = Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
-    protected static final VoxelShape SHAPE_TOP = Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
-    protected static final VoxelShape SHAPE_TOP_COLLISION = Block.makeCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 9.0D, 15.0D);
+    protected static final VoxelShape SHAPE_BOTTOM = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
+    protected static final VoxelShape SHAPE_TOP = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 15.0D, 13.0D);
+    protected static final VoxelShape SHAPE_TOP_COLLISION = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 9.0D, 13.0D);
     private final Supplier<Block> block;
     private final boolean strippable; // this code is fucking ABYSMAL
 
