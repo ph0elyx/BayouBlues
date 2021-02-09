@@ -44,7 +44,7 @@
   "block.bayou_blues.gooseberry_sack": "Gooseberry Sack",
   
   "_comment2": "Slabfish",
-  "entity.bayou_blues.slabfish.type.marsh": "Bayou",
+  "entity.bayou_blues.slabfish.type.bayou": "Bayou",
 
   "_comment3": "Misc",
   "biome.bayou_blues.bayou": "Bayou",
