@@ -47,6 +47,8 @@ public class BayouBluesBiomes {
                         .setFogColor(0xA0E2E5)
                         .withSkyColor(getSkyColorWithTemperatureModifier(0.75F))
                         .setMoodSound(MoodSoundAmbience.DEFAULT_CAVE)
+                        .withFoliageColor(0x4D9921)
+                        .withGrassColor(0x72B54C)
                         .build())
                 .withMobSpawnSettings(new MobSpawnInfo.Builder().copy())
                 .withGenerationSettings((new BiomeGenerationSettings.Builder())
