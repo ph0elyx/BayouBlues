@@ -16,8 +16,8 @@ import net.minecraftforge.fml.common.Mod;
 public class BayouBluesBiomes {
     private static final BiomeSubRegistryHelper HELPER = BayouBlues.REGISTRY_HELPER.getBiomeSubHelper();
 
-    public static final BiomeSubRegistryHelper.KeyedBiome BAYOU = HELPER.createBiome("bayou", () -> makeBayouBiome(-0.1F, 0.2F));
-    public static final BiomeSubRegistryHelper.KeyedBiome BAYOU_HILLS = HELPER.createBiome("bayou_hills", () -> makeBayouBiome(0.0F, 0.4F));
+    public static final BiomeSubRegistryHelper.KeyedBiome BAYOU = HELPER.createBiome("bayou", () -> makeBayouBiome(-0.175F, 0.2F));
+    public static final BiomeSubRegistryHelper.KeyedBiome BAYOU_HILLS = HELPER.createBiome("bayou_hills", () -> makeBayouBiome(-0.1F, 0.4F));
 
     public static void addHillBiome() {
         BiomeUtil.addHillBiome(BAYOU.getKey(), Pair.of(BAYOU_HILLS.getKey(), 1));

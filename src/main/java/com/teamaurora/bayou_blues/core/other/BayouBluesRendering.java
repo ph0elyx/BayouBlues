@@ -21,8 +21,6 @@ public class BayouBluesRendering {
 
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_CYPRESS_KNEE.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(BayouBluesBlocks.STRIPPED_LARGE_CYPRESS_KNEE.get(), RenderType.getCutout());
 
         RenderTypeLookup.setRenderLayer(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.getCutout());
 

@@ -18,7 +18,7 @@ public class LargeLandPatchFeature extends LargePatchFeature {
     public boolean generate(ISeedReader reader, ChunkGenerator generator, Random rand, BlockPos pos, BlockStateFeatureConfig config) {
         int i = 0;
         for (BlockPos newPos : BlockPos.getAllInBoxMutable(pos.add(-6, -6, -6), pos.add(6, 6, 6))) {
-            if (config.state.getBlock().isValidPosition(config.state, reader, newPos) && reader.getBlockState(newPos.down()).getBlock() == Blocks.GRASS_BLOCK) {
+            if (config.state.getBlock().isValidPosition(config.state, reader, newPos) && reader.getBlockState(newPos).isAir() && reader.getBlockState(newPos.down()).getBlock() == Blocks.GRASS_BLOCK) {
                 if (rand.nextFloat() <= 1.0F - (newPos.distanceSq(pos) / 72)) {
                     reader.setBlockState(newPos, config.state, 3);
                     i++;

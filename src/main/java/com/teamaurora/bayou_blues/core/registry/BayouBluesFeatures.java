@@ -126,6 +126,8 @@ public class BayouBluesFeatures {
         public static final ConfiguredFeature<?, ?> TREES_BAYOU = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(CYPRESS_BUSH.withChance(0.35F), MEGA_CYPRESS_KNEES.withChance(0.333333334F)), CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(20, 0.1F, 1)));
         public static final ConfiguredFeature<?, ?> TREES_BAYOU_WATER = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(WATER_MEGA_CYPRESS.withChance(0.333333334F)), WATER_CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(9, 0.1F, 1)));
 
+        public static final ConfiguredFeature<?, ?> PATCH_TALL_GRASS = Feature.RANDOM_PATCH.withConfiguration(Features.Configs.TALL_GRASS_CONFIG).withPlacement(Features.Placements.PATCH_PLACEMENT).func_242731_b(80);
+
         private static <FC extends IFeatureConfig> void register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
             Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(BayouBlues.MODID, name), configuredFeature);
         }
@@ -148,6 +150,8 @@ public class BayouBluesFeatures {
 
             register("trees_bayou", TREES_BAYOU);
             register("trees_bayou_water", TREES_BAYOU_WATER);
+
+            register("patch_tall_grass", PATCH_TALL_GRASS);
         }
     }
 }
