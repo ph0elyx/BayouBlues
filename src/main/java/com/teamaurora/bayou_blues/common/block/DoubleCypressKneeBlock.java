@@ -34,14 +34,10 @@ public class DoubleCypressKneeBlock extends Block implements IWaterLoggable {
     protected static final VoxelShape SHAPE_BOTTOM = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
     protected static final VoxelShape SHAPE_TOP = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 8.0D, 11.0D);
     protected static final VoxelShape SHAPE_TOP_COLLISION = Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 5.0D, 11.0D);
-    private final Supplier<Block> block;
-    private final boolean strippable; // this code is fucking ABYSMAL
 
-    public DoubleCypressKneeBlock(Supplier<Block> block, boolean strippable, AbstractBlock.Properties properties) {
+    public DoubleCypressKneeBlock(AbstractBlock.Properties properties) {
         super(properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, Boolean.valueOf(false)).with(HALF, DoubleBlockHalf.LOWER));
-        this.block = block;
-        this.strippable = strippable;
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -137,29 +133,5 @@ public class DoubleCypressKneeBlock extends Block implements IWaterLoggable {
 
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
-    }
-
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult result) {
-        ItemStack stack = player.getHeldItem(hand);
-        if (strippable && stack.getItem() instanceof AxeItem) {
-            world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            if (!world.isRemote) {
-                if (state.get(HALF) == DoubleBlockHalf.LOWER) {
-                    world.setBlockState(pos, block.get().getDefaultState().with(WATERLOGGED, state.get(WATERLOGGED)).with(HALF, DoubleBlockHalf.LOWER), 51);
-                    world.setBlockState(pos.up(), block.get().getDefaultState().with(WATERLOGGED, world.getBlockState(pos.up()).get(WATERLOGGED)).with(HALF, DoubleBlockHalf.UPPER), 51);
-                } else {
-                    world.setBlockState(pos, block.get().getDefaultState().with(WATERLOGGED, state.get(WATERLOGGED)).with(HALF, DoubleBlockHalf.UPPER), 51);
-                    world.setBlockState(pos.down(), block.get().getDefaultState().with(WATERLOGGED, world.getBlockState(pos.down()).get(WATERLOGGED)).with(HALF, DoubleBlockHalf.LOWER), 51);
-                }
-
-                stack.damageItem(1, player, (playerIn) -> {
-                    playerIn.sendBreakAnimation(hand);
-                });
-            }
-
-            return ActionResultType.SUCCESS;
-        } else {
-            return ActionResultType.PASS;
-        }
     }
 }

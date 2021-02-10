@@ -27,14 +27,10 @@ import java.util.function.Supplier;
 public class CypressKneeBlock extends Block implements IWaterLoggable {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 15.0D, 13.0D);
-    private final Supplier<Block> block;
-    private final boolean strippable; // this code is fucking ABYSMAL
 
-    public CypressKneeBlock(Supplier<Block> block, boolean strippable, AbstractBlock.Properties properties) {
+    public CypressKneeBlock(AbstractBlock.Properties properties) {
         super(properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, Boolean.valueOf(false)));
-        this.block = block;
-        this.strippable = strippable;
     }
 
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -78,22 +74,5 @@ public class CypressKneeBlock extends Block implements IWaterLoggable {
 
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
-    }
-
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult result) {
-        ItemStack stack = player.getHeldItem(hand);
-        if (strippable && stack.getItem() instanceof AxeItem) {
-            world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            if (!world.isRemote) {
-                world.setBlockState(pos, BlockUtil.transferAllBlockStates(state, ((Block)this.block.get()).getDefaultState()));
-                stack.damageItem(1, player, (playerIn) -> {
-                    playerIn.sendBreakAnimation(hand);
-                });
-            }
-
-            return ActionResultType.SUCCESS;
-        } else {
-            return ActionResultType.PASS;
-        }
     }
 }

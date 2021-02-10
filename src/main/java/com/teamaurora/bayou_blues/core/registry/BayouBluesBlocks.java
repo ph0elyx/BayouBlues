@@ -55,10 +55,8 @@ public class BayouBluesBlocks {
 
     public static final RegistryObject<Block> HANGING_CYPRESS_LEAVES = HELPER.createBlock("hanging_cypress_leaves", ()->new HangingCypressLeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)), ItemGroup.DECORATIONS);
 
-    public static final RegistryObject<Block> STRIPPED_CYPRESS_KNEE = HELPER.createBlock("stripped_cypress_knee", ()->new CypressKneeBlock(()->Blocks.AIR, false, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.DECORATIONS);
-    public static final RegistryObject<Block> CYPRESS_KNEE = HELPER.createBlock("cypress_knee", ()->new CypressKneeBlock(STRIPPED_CYPRESS_KNEE, true, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.DECORATIONS);
-    public static final RegistryObject<Block> STRIPPED_LARGE_CYPRESS_KNEE = HELPER.createBlock("stripped_large_cypress_knee", ()->new DoubleCypressKneeBlock(()->Blocks.AIR, false, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.DECORATIONS);
-    public static final RegistryObject<Block> LARGE_CYPRESS_KNEE = HELPER.createBlock("large_cypress_knee", ()->new DoubleCypressKneeBlock(STRIPPED_LARGE_CYPRESS_KNEE, true, AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.DECORATIONS);
+    public static final RegistryObject<Block> CYPRESS_KNEE = HELPER.createBlock("cypress_knee", ()->new CypressKneeBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.DECORATIONS);
+    public static final RegistryObject<Block> LARGE_CYPRESS_KNEE = HELPER.createBlock("large_cypress_knee", ()->new DoubleCypressKneeBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F).sound(SoundType.WOOD).notSolid()), ItemGroup.DECORATIONS);
 
     // gooseberries
     public static final RegistryObject<Block> CYPRESS_BRANCH = HELPER.createBlock("cypress_branch", ()->new CypressBranchBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().doesNotBlockMovement().sound(SoundType.BAMBOO_SAPLING)), ItemGroup.DECORATIONS);
