@@ -43,7 +43,14 @@
   "block.bayou_blues.cypress_branch": "Rama de ciprés",
   "block.bayou_blues.gooseberry_sack": "Saco de grosellas",
 
-  "_comment2": "Misc",
+  "_comment2": "Slabfish",
+  "entity.bayou_blues.slabfish.type.bayou": "Bayou",
+
+  "_comment3": "Misc",
   "biome.bayou_blues.bayou": "Bayou",
-  "biome.bayou_blues.bayou_hills": "Colinas de bayou"
+  "biome.bayou_blues.bayou_hills": "Colinas de bayou",
+
+  "block.bayou_blues.algae": "Algas",
+  "block.bayou_blues.tree_moss_block": "Bloque de musgo de árbol",
+  "block.bayou_blues.tree_moss": "Musgo de árbol"
 }
