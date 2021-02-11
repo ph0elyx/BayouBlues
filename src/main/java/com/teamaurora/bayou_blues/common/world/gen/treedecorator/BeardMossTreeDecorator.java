@@ -2,8 +2,8 @@ package com.teamaurora.bayou_blues.common.world.gen.treedecorator;
 
 import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.mojang.serialization.Codec;
-import com.teamaurora.bayou_blues.common.block.TreeMossBlock;
-import com.teamaurora.bayou_blues.common.block.TreeMossBlockBlock;
+import com.teamaurora.bayou_blues.common.block.BeardMossBlock;
+import com.teamaurora.bayou_blues.common.block.BeardMossBlockBlock;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -17,13 +17,13 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class TreeMossTreeDecorator extends TreeDecorator {
-    public static final Codec<TreeMossTreeDecorator> CODEC;
-    public static final TreeMossTreeDecorator DECORATOR = new TreeMossTreeDecorator();
+public class BeardMossTreeDecorator extends TreeDecorator {
+    public static final Codec<BeardMossTreeDecorator> CODEC;
+    public static final BeardMossTreeDecorator DECORATOR = new BeardMossTreeDecorator();
 
     @Override
     protected TreeDecoratorType<?> func_230380_a_() {
-        return BayouBluesFeatures.HANGING_CYPRESS_LEAVES.get();
+        return BayouBluesFeatures.BEARD_MOSS.get();
     }
 
     static {
@@ -45,20 +45,20 @@ public class TreeMossTreeDecorator extends TreeDecorator {
                 if (!TreeUtil.isAir(world, pos.down(rand1 + 1))) flag = false;
                 if (flag) {
                     for (int i = 0; i < rand1; i++) {
-                        world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState().with(TreeMossBlockBlock.PERSISTENT, false), 3);
+                        world.setBlockState(pos.down(i + 1), BayouBluesBlocks.BEARD_MOSS_BLOCK.get().getDefaultState().with(BeardMossBlockBlock.PERSISTENT, false), 3);
                     }
                     int rand2 = rand.nextInt(6) + 1;
                     for (int i = 0; i < rand2; i++) {
                         if (!world.isAirBlock(pos.down(rand1 + i + 1))) {
                             if (i > 0) {
-                                world.setBlockState(pos.down(rand1 + i), BayouBluesBlocks.TREE_MOSS.get().getDefaultState(), 3);
+                                world.setBlockState(pos.down(rand1 + i), BayouBluesBlocks.BEARD_MOSS.get().getDefaultState(), 3);
                             }
                             break;
                         }
                         if (i == rand2 - 1) {
-                            world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.TREE_MOSS.get().getDefaultState(), 3);
+                            world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.BEARD_MOSS.get().getDefaultState(), 3);
                         } else {
-                            world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.TREE_MOSS.get().getDefaultState().with(TreeMossBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                            world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.BEARD_MOSS.get().getDefaultState().with(BeardMossBlock.HALF, DoubleBlockHalf.UPPER), 3);
                         }
                     }
                 }
@@ -78,20 +78,20 @@ public class TreeMossTreeDecorator extends TreeDecorator {
                     if (!TreeUtil.isAir(world, pos.down(rand1 + 1))) flag = false;
                     if (flag) {
                         for (int i = 0; i < rand1; i++) {
-                            world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState().with(TreeMossBlockBlock.PERSISTENT, false), 3);
+                            world.setBlockState(pos.down(i + 1), BayouBluesBlocks.BEARD_MOSS_BLOCK.get().getDefaultState().with(BeardMossBlockBlock.PERSISTENT, false), 3);
                         }
                         int rand2 = rand.nextInt(4) + 1;
                         for (int i = 0; i < rand2; i++) {
                             if (!world.isAirBlock(pos.down(rand1 + i + 1))) {
                                 if (i > 0) {
-                                    world.setBlockState(pos.down(rand1 + i), BayouBluesBlocks.TREE_MOSS.get().getDefaultState(), 3);
+                                    world.setBlockState(pos.down(rand1 + i), BayouBluesBlocks.BEARD_MOSS.get().getDefaultState(), 3);
                                 }
                                 break;
                             }
                             if (i == rand2 - 1) {
-                                world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.TREE_MOSS.get().getDefaultState(), 3);
+                                world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.BEARD_MOSS.get().getDefaultState(), 3);
                             } else {
-                                world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.TREE_MOSS.get().getDefaultState().with(TreeMossBlock.HALF, DoubleBlockHalf.UPPER), 3);
+                                world.setBlockState(pos.down(rand1 + i + 1), BayouBluesBlocks.BEARD_MOSS.get().getDefaultState().with(BeardMossBlock.HALF, DoubleBlockHalf.UPPER), 3);
                             }
                         }
                     }

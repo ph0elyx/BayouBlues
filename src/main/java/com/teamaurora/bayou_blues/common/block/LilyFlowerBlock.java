@@ -21,13 +21,14 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class LilyFlowerBlock extends LilyPadBlock {
     protected static final VoxelShape LILY_FLOWER_AABB = Block.makeCuboidShape(3.0D, 1.5D, 3.0D, 13.0D, 13.D, 13.0D);
     protected static final VoxelShape SHAPE = VoxelShapes.or(LILY_PAD_AABB, LILY_FLOWER_AABB);
-    private final Item item;
+    private final Supplier<Item> item;
 
-    public LilyFlowerBlock(Item item, Properties builder) {
+    public LilyFlowerBlock(Supplier<Item> item, Properties builder) {
         super(builder);
         this.item = item;
     }
@@ -41,7 +42,7 @@ public class LilyFlowerBlock extends LilyPadBlock {
     }
 
     public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-        return new ItemStack(this.item);
+        return new ItemStack(this.item.get());
     }
 
     public static Block getRandomLily(Random rand) {

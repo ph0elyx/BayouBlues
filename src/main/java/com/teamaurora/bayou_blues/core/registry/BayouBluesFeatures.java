@@ -19,7 +19,6 @@ import net.minecraft.world.gen.foliageplacer.BushFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.treedecorator.LeaveVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 import net.minecraftforge.fml.RegistryObject;
@@ -46,7 +45,7 @@ public class BayouBluesFeatures {
     public static final RegistryObject<TreeDecoratorType<?>> CYPRESS_KNEES = TREE_DECORATORS.register("cypress_knees", () -> new TreeDecoratorType<>(CypressKneesTreeDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<?>> SPARSE_CYPRESS_KNEES = TREE_DECORATORS.register("sparse_cypress_knees", () -> new TreeDecoratorType<>(SparseCypressKneesTreeDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<?>> CYPRESS_BRANCH = TREE_DECORATORS.register("cypress_branch", () -> new TreeDecoratorType<>(CypressBranchTreeDecorator.CODEC));
-    public static final RegistryObject<TreeDecoratorType<?>> TREE_MOSS = TREE_DECORATORS.register("tree_moss", () -> new TreeDecoratorType<>(TreeMossTreeDecorator.CODEC));
+    public static final RegistryObject<TreeDecoratorType<?>> BEARD_MOSS = TREE_DECORATORS.register("beard_moss", () -> new TreeDecoratorType<>(BeardMossTreeDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<?>> SPARSE_LEAVE_VINE = TREE_DECORATORS.register("sparse_leave_vine", () -> new TreeDecoratorType<>(SparseLeaveVineTreeDecorator.CODEC));
 
     public static final class BlockStates {
@@ -83,7 +82,7 @@ public class BayouBluesFeatures {
                 new BlobFoliagePlacer(FeatureSpread.func_242252_a(0), FeatureSpread.func_242252_a(0), 0),
                 new StraightTrunkPlacer(0, 0, 0),
                 new TwoLayerFeature(0, 0, 0)
-        )).setIgnoreVines().setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, SparseCypressKneesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, TreeMossTreeDecorator.DECORATOR)).build();
+        )).setIgnoreVines().setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, SparseCypressKneesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, BeardMossTreeDecorator.DECORATOR)).build();
 
         public static final BaseTreeFeatureConfig CYPRESS_KNEE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(
                 new SimpleBlockStateProvider(BlockStates.CYPRESS_LOG),
@@ -91,7 +90,7 @@ public class BayouBluesFeatures {
                 new BlobFoliagePlacer(FeatureSpread.func_242252_a(0), FeatureSpread.func_242252_a(0), 0),
                 new StraightTrunkPlacer(0, 0, 0),
                 new TwoLayerFeature(0, 0, 0)
-        )).setIgnoreVines().setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressKneesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, TreeMossTreeDecorator.DECORATOR)).build();
+        )).setIgnoreVines().setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressKneesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, BeardMossTreeDecorator.DECORATOR)).build();
 
         public static final BaseTreeFeatureConfig WATER_CYPRESS_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(
                 new SimpleBlockStateProvider(BlockStates.CYPRESS_LOG),
@@ -99,7 +98,7 @@ public class BayouBluesFeatures {
                 new BlobFoliagePlacer(FeatureSpread.func_242252_a(0), FeatureSpread.func_242252_a(0), 0),
                 new StraightTrunkPlacer(0, 0, 0),
                 new TwoLayerFeature(0, 0, 0)
-        )).setIgnoreVines().setMaxWaterDepth(3).setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, SparseCypressKneesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, TreeMossTreeDecorator.DECORATOR)).build();
+        )).setIgnoreVines().setMaxWaterDepth(3).setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, SparseCypressKneesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, BeardMossTreeDecorator.DECORATOR)).build();
 
         public static final BaseTreeFeatureConfig WATER_CYPRESS_KNEE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(
                 new SimpleBlockStateProvider(BlockStates.CYPRESS_LOG),
@@ -107,7 +106,7 @@ public class BayouBluesFeatures {
                 new BlobFoliagePlacer(FeatureSpread.func_242252_a(0), FeatureSpread.func_242252_a(0), 0),
                 new StraightTrunkPlacer(0, 0, 0),
                 new TwoLayerFeature(0, 0, 0)
-        )).setIgnoreVines().setMaxWaterDepth(3).setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, CypressKneesTreeDecorator.DECORATOR, TreeMossTreeDecorator.DECORATOR)).build();
+        )).setIgnoreVines().setMaxWaterDepth(3).setDecorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR, SparseLeaveVineTreeDecorator.DECORATOR, CypressKneesTreeDecorator.DECORATOR, BeardMossTreeDecorator.DECORATOR)).build();
 
         public static final BaseTreeFeatureConfig CYPRESS_BUSH_CONFIG = (new BaseTreeFeatureConfig.Builder(
                 new SimpleBlockStateProvider(BlockStates.CYPRESS_LOG),

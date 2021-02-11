@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bayou_blues:tree_moss"
+          "name": "bayou_blues:beard_moss_block"
         }
       ],
       "conditions": [

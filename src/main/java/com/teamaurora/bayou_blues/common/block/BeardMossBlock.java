@@ -22,11 +22,11 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class TreeMossBlock extends Block implements IGrowable {
+public class BeardMossBlock extends Block implements IGrowable {
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
     protected static final VoxelShape SHAPE = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 16.0D, 13.0D);
 
-    public TreeMossBlock(Properties properties) {
+    public BeardMossBlock(Properties properties) {
         super(properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(HALF, DoubleBlockHalf.LOWER));
     }
@@ -48,7 +48,7 @@ public class TreeMossBlock extends Block implements IGrowable {
 
     public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
         BlockState stateUp = worldIn.getBlockState(pos.up());
-        return stateUp.isSolid() || stateUp.getBlock() == this || stateUp.isIn(BlockTags.LEAVES) || stateUp.getBlock() == BayouBluesBlocks.TREE_MOSS_BLOCK.get();
+        return stateUp.isSolid() || stateUp.getBlock() == this || stateUp.isIn(BlockTags.LEAVES) || stateUp.getBlock() == BayouBluesBlocks.BEARD_MOSS_BLOCK.get();
     }
 
     public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {

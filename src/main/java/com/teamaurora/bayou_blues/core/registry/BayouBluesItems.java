@@ -21,8 +21,8 @@ public class BayouBluesItems {
     public static final RegistryObject<Item> GOOSEBERRY_PIE = HELPER.createItem("gooseberry_pie", ()->new Item(new Item.Properties().food(Foods.GOOSEBERRY_PIE).group(ItemGroup.FOOD)));
 
     public static final RegistryObject<Item> ALGAE = HELPER.createItem("algae", ()->new AlgaeItem(BayouBluesBlocks.ALGAE.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
-    public static final RegistryObject<Item> TREE_MOSS = HELPER.createItem("tree_moss", ()->new TreeMossItem(BayouBluesBlocks.TREE_MOSS.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
-    public static final RegistryObject<Item> TREE_MOSS_BLOCK = HELPER.createItem("tree_moss_block", ()->new TreeMossBlockItem(BayouBluesBlocks.TREE_MOSS_BLOCK.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> BEARD_MOSS = HELPER.createItem("beard_moss", ()->new TreeMossItem(BayouBluesBlocks.BEARD_MOSS.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
+    public static final RegistryObject<Item> BEARD_MOSS_BLOCK = HELPER.createItem("beard_moss_block", ()->new TreeMossBlockItem(BayouBluesBlocks.BEARD_MOSS_BLOCK.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
 
     public static final RegistryObject<Item> BLUE_LILY = HELPER.createItem("blue_lily", ()->new LilyItem(BayouBluesBlocks.BLUE_LILY.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));
     public static final RegistryObject<Item> LIGHT_GRAY_LILY = HELPER.createItem("light_gray_lily", ()->new LilyItem(BayouBluesBlocks.LIGHT_GRAY_LILY.get(), new Item.Properties().group(ItemGroup.DECORATIONS)));

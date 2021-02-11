@@ -13,10 +13,10 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraftforge.common.IForgeShearable;
 
-public class TreeMossBlockBlock extends Block implements IForgeShearable {
+public class BeardMossBlockBlock extends Block implements IForgeShearable {
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;
 
-    public TreeMossBlockBlock(Properties properties) {
+    public BeardMossBlockBlock(Properties properties) {
         super(properties);
         this.setDefaultState(this.stateContainer.getBaseState().with(PERSISTENT, true));
     }

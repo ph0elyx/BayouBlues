@@ -6,10 +6,10 @@
   ],
   "key": {
     "#": {
-      "item": "bayou_blues:tree_moss"
+      "item": "bayou_blues:beard_moss"
     }
   },
   "result": {
-    "item": "bayou_blues:tree_moss_block"
+    "item": "bayou_blues:beard_moss_block"
   }
 }
