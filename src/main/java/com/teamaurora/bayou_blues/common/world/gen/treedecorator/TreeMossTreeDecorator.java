@@ -3,6 +3,7 @@ package com.teamaurora.bayou_blues.common.world.gen.treedecorator;
 import com.minecraftabnormals.abnormals_core.core.util.TreeUtil;
 import com.mojang.serialization.Codec;
 import com.teamaurora.bayou_blues.common.block.TreeMossBlock;
+import com.teamaurora.bayou_blues.common.block.TreeMossBlockBlock;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraft.state.properties.DoubleBlockHalf;
@@ -44,7 +45,7 @@ public class TreeMossTreeDecorator extends TreeDecorator {
                 if (!TreeUtil.isAir(world, pos.down(rand1 + 1))) flag = false;
                 if (flag) {
                     for (int i = 0; i < rand1; i++) {
-                        world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState(), 3);
+                        world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState().with(TreeMossBlockBlock.PERSISTENT, false), 3);
                     }
                     int rand2 = rand.nextInt(6) + 1;
                     for (int i = 0; i < rand2; i++) {
@@ -77,7 +78,7 @@ public class TreeMossTreeDecorator extends TreeDecorator {
                     if (!TreeUtil.isAir(world, pos.down(rand1 + 1))) flag = false;
                     if (flag) {
                         for (int i = 0; i < rand1; i++) {
-                            world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState(), 3);
+                            world.setBlockState(pos.down(i + 1), BayouBluesBlocks.TREE_MOSS_BLOCK.get().getDefaultState().with(TreeMossBlockBlock.PERSISTENT, false), 3);
                         }
                         int rand2 = rand.nextInt(4) + 1;
                         for (int i = 0; i < rand2; i++) {

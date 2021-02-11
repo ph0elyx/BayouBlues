@@ -75,4 +75,17 @@ public class TreeMossBlock extends Block implements IGrowable {
             worldIn.setBlockState(pos, state.with(HALF, DoubleBlockHalf.LOWER));
         }
     }
+
+    @Override
+    public boolean ticksRandomly(BlockState state) {
+        return true;
+    }
+
+    public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
+        if (worldIn.rand.nextInt(8) == 0 && worldIn.isAreaLoaded(pos, 4)) { // Forge: check area to prevent loading unloaded chunks
+            if (worldIn.isAirBlock(pos.down())) {
+                worldIn.setBlockState(pos.down(), this.getDefaultState());
+            }
+        }
+    }
 }
