@@ -5,11 +5,14 @@ import com.teamaurora.bayou_blues.common.world.gen.feature.*;
 import com.teamaurora.bayou_blues.common.world.gen.treedecorator.*;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.Heightmap;
+import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.BushFoliagePlacer;
@@ -53,6 +56,16 @@ public class BayouBluesFeatures {
 
         public static final BlockState ALGAE = BayouBluesBlocks.ALGAE.get().getDefaultState();
         public static final BlockState CYPRESS_LEAF_CARPET = BayouBluesBlocks.CYPRESS_LEAF_CARPET.get().getDefaultState();
+
+        public static final BlockState BLUE_LILY = BayouBluesBlocks.BLUE_LILY.get().getDefaultState();
+        public static final BlockState CYAN_LILY = BayouBluesBlocks.CYAN_LILY.get().getDefaultState();
+        public static final BlockState LIGHT_BLUE_LILY = BayouBluesBlocks.LIGHT_BLUE_LILY.get().getDefaultState();
+        public static final BlockState LIGHT_GRAY_LILY = BayouBluesBlocks.LIGHT_GRAY_LILY.get().getDefaultState();
+        public static final BlockState WHITE_LILY = BayouBluesBlocks.WHITE_LILY.get().getDefaultState();
+        public static final BlockState PINK_LILY = BayouBluesBlocks.PINK_LILY.get().getDefaultState();
+        public static final BlockState MAGENTA_LILY = BayouBluesBlocks.MAGENTA_LILY.get().getDefaultState();
+        public static final BlockState PURPLE_LILY = BayouBluesBlocks.PURPLE_LILY.get().getDefaultState();
+        public static final BlockState LILY_PAD = Blocks.LILY_PAD.getDefaultState();
     }
 
     public static final class Configs {
@@ -105,6 +118,10 @@ public class BayouBluesFeatures {
 
         public static final BlockStateFeatureConfig ALGAE_PATCH_CONFIG = new BlockStateFeatureConfig(BlockStates.ALGAE);
         public static final BlockStateFeatureConfig CYPRESS_LEAF_CARPET_PATCH_CONFIG = new BlockStateFeatureConfig(BlockStates.CYPRESS_LEAF_CARPET);
+
+        public static final BlockClusterFeatureConfig PATCH_LILY_COOL_CONFIG = (new BlockClusterFeatureConfig.Builder(new WeightedBlockStateProvider().addWeightedBlockstate(BlockStates.BLUE_LILY, 2).addWeightedBlockstate(BlockStates.CYAN_LILY, 2).addWeightedBlockstate(BlockStates.LIGHT_BLUE_LILY, 2).addWeightedBlockstate(BlockStates.LILY_PAD, 5), SimpleBlockPlacer.PLACER)).xSpread(5).zSpread(5).tries(15).build();
+        public static final BlockClusterFeatureConfig PATCH_LILY_NEUTRAL_CONFIG = (new BlockClusterFeatureConfig.Builder(new WeightedBlockStateProvider().addWeightedBlockstate(BlockStates.LIGHT_GRAY_LILY, 3).addWeightedBlockstate(BlockStates.WHITE_LILY, 3).addWeightedBlockstate(BlockStates.LILY_PAD, 5), SimpleBlockPlacer.PLACER)).xSpread(5).zSpread(5).tries(15).build();
+        public static final BlockClusterFeatureConfig PATCH_LILY_WARM_CONFIG = (new BlockClusterFeatureConfig.Builder(new WeightedBlockStateProvider().addWeightedBlockstate(BlockStates.PINK_LILY, 2).addWeightedBlockstate(BlockStates.MAGENTA_LILY, 2).addWeightedBlockstate(BlockStates.PURPLE_LILY, 2).addWeightedBlockstate(BlockStates.LILY_PAD, 5), SimpleBlockPlacer.PLACER)).xSpread(5).zSpread(5).tries(15).build();
     }
 
     public static final class Configured {
@@ -127,6 +144,10 @@ public class BayouBluesFeatures {
         public static final ConfiguredFeature<?, ?> TREES_BAYOU_WATER = Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(WATER_MEGA_CYPRESS.withChance(0.333333334F)), WATER_CYPRESS)).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.COUNT_EXTRA.configure(new AtSurfaceWithExtraConfig(9, 0.1F, 1)));
 
         public static final ConfiguredFeature<?, ?> PATCH_TALL_GRASS = Feature.RANDOM_PATCH.withConfiguration(Features.Configs.TALL_GRASS_CONFIG).withPlacement(Features.Placements.PATCH_PLACEMENT).func_242731_b(80);
+
+        public static final ConfiguredFeature<?, ?> PATCH_LILY_COOL = Feature.RANDOM_PATCH.withConfiguration(Configs.PATCH_LILY_COOL_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.CHANCE.configure(new ChanceConfig(4)));
+        public static final ConfiguredFeature<?, ?> PATCH_LILY_NEUTRAL = Feature.RANDOM_PATCH.withConfiguration(Configs.PATCH_LILY_NEUTRAL_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.CHANCE.configure(new ChanceConfig(4)));
+        public static final ConfiguredFeature<?, ?> PATCH_LILY_WARM = Feature.RANDOM_PATCH.withConfiguration(Configs.PATCH_LILY_WARM_CONFIG).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT).withPlacement(Placement.CHANCE.configure(new ChanceConfig(4)));
 
         private static <FC extends IFeatureConfig> void register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
             Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation(BayouBlues.MODID, name), configuredFeature);
@@ -152,6 +173,10 @@ public class BayouBluesFeatures {
             register("trees_bayou_water", TREES_BAYOU_WATER);
 
             register("patch_tall_grass", PATCH_TALL_GRASS);
+
+            register("patch_lily_cool", PATCH_LILY_COOL);
+            register("patch_lily_neutral", PATCH_LILY_NEUTRAL);
+            register("patch_lily_warm", PATCH_LILY_WARM);
         }
     }
 }

@@ -63,14 +63,14 @@ public class BayouBluesBlocks {
     public static final RegistryObject<Block> GOOSEBERRY_SACK = HELPER.createCompatBlock("quark", "gooseberry_sack", ()->new Block(Block.Properties.create(Material.WOOL, MaterialColor.GREEN).hardnessAndResistance(0.5F).sound(SoundType.CLOTH)), ItemGroup.DECORATIONS);
 
     // lilies
-    public static final RegistryObject<Block> BLUE_LILY = HELPER.createBlockNoItem("blue_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> LIGHT_GRAY_LILY = HELPER.createBlockNoItem("light_gray_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> CYAN_LILY = HELPER.createBlockNoItem("cyan_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> LIGHT_BLUE_LILY = HELPER.createBlockNoItem("light_blue_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> MAGENTA_LILY = HELPER.createBlockNoItem("magenta_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> PINK_LILY = HELPER.createBlockNoItem("pink_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> PURPLE_LILY = HELPER.createBlockNoItem("purple_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
-    public static final RegistryObject<Block> WHITE_LILY = HELPER.createBlockNoItem("white_lily", ()->new LilyFlowerBlock(AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> BLUE_LILY = HELPER.createBlockNoItem("blue_lily", ()->new LilyFlowerBlock(BayouBluesItems.BLUE_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> LIGHT_GRAY_LILY = HELPER.createBlockNoItem("light_gray_lily", ()->new LilyFlowerBlock(BayouBluesItems.LIGHT_GRAY_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> CYAN_LILY = HELPER.createBlockNoItem("cyan_lily", ()->new LilyFlowerBlock(BayouBluesItems.CYAN_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> LIGHT_BLUE_LILY = HELPER.createBlockNoItem("light_blue_lily", ()->new LilyFlowerBlock(BayouBluesItems.LIGHT_BLUE_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> MAGENTA_LILY = HELPER.createBlockNoItem("magenta_lily", ()->new LilyFlowerBlock(BayouBluesItems.MAGENTA_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> PINK_LILY = HELPER.createBlockNoItem("pink_lily", ()->new LilyFlowerBlock(BayouBluesItems.PINK_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> PURPLE_LILY = HELPER.createBlockNoItem("purple_lily", ()->new LilyFlowerBlock(BayouBluesItems.PURPLE_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
+    public static final RegistryObject<Block> WHITE_LILY = HELPER.createBlockNoItem("white_lily", ()->new LilyFlowerBlock(BayouBluesItems.WHITE_LILY.get(), AbstractBlock.Properties.from(Blocks.LILY_PAD)));
 
     // other
     public static final RegistryObject<Block> ALGAE = HELPER.createBlockNoItem("algae", ()->new AlgaeBlock(AbstractBlock.Properties.create(Material.PLANTS).zeroHardnessAndResistance().sound(SoundType.LILY_PADS).notSolid().doesNotBlockMovement()));

@@ -7,6 +7,7 @@ import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.gen.GenerationStage;
@@ -27,6 +28,8 @@ public class BayouBluesBiomeFeatures {
 
         if (DataUtil.matchesKeys(biomeName, BayouBluesBiomes.BAYOU.getKey(), BayouBluesBiomes.BAYOU_HILLS.getKey())) {
             withBayouFeatures(event.getGeneration(), event.getSpawns());
+        } else if (DataUtil.matchesKeys(biomeName, Biomes.SWAMP, Biomes.SWAMP_HILLS)) {
+            withLilyFlowers(event.getGeneration());
         }
     }
 
@@ -65,7 +68,14 @@ public class BayouBluesBiomeFeatures {
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.FALLEN_CYPRESS_LEAVES);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.FLOWER_SWAMP);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_WATERLILLY);
+        withLilyFlowers(builder);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.BROWN_MUSHROOM_SWAMP);
         builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.RED_MUSHROOM_SWAMP);
+    }
+
+    private static void withLilyFlowers(BiomeGenerationSettingsBuilder builder) {
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.PATCH_LILY_COOL);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.PATCH_LILY_NEUTRAL);
+        builder.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.PATCH_LILY_WARM);
     }
 }
