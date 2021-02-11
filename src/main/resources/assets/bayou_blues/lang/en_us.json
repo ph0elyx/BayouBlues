@@ -50,5 +50,23 @@
 
   "block.bayou_blues.algae": "Algae",
   "block.bayou_blues.tree_moss_block": "Tree Moss Block",
-  "block.bayou_blues.tree_moss": "Tree Moss"
+  "block.bayou_blues.tree_moss": "Tree Moss",
+
+  "block.bayou_blues.blue_lily": "Blue Lily",
+  "block.bayou_blues.light_gray_lily": "Light Gray Lily",
+  "block.bayou_blues.cyan_lily": "Cyan Lily",
+  "block.bayou_blues.light_blue_lily": "Light Blue Lily",
+  "block.bayou_blues.magenta_lily": "Magenta Lily",
+  "block.bayou_blues.pink_lily": "Pink Lily",
+  "block.bayou_blues.purple_lily": "Purple Lily",
+  "block.bayou_blues.white_lily": "White Lily",
+
+  "item.bayou_blues.blue_lily": "Blue Lily",
+  "item.bayou_blues.light_gray_lily": "Light Gray Lily",
+  "item.bayou_blues.cyan_lily": "Cyan Lily",
+  "item.bayou_blues.light_blue_lily": "Light Blue Lily",
+  "item.bayou_blues.magenta_lily": "Magenta Lily",
+  "item.bayou_blues.pink_lily": "Pink Lily",
+  "item.bayou_blues.purple_lily": "Purple Lily",
+  "item.bayou_blues.white_lily": "White Lily"
 }
