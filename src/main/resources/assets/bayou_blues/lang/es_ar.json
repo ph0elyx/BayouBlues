@@ -49,6 +49,24 @@
   "biome.bayou_blues.bayou_hills": "Colinas de bayou",
 
   "block.bayou_blues.algae": "Algas",
-  "block.bayou_blues.tree_moss_block": "Bloque de musgo de árbol",
-  "block.bayou_blues.tree_moss": "Musgo de árbol"
+  "block.bayou_blues.beard_moss_block": "Bloque de musgo de barba",
+  "block.bayou_blues.beard_moss": "Musgo de barba",
+
+  "block.bayou_blues.blue_lily": "Lirio azul",
+  "block.bayou_blues.light_gray_lily": "Lirio gris claro",
+  "block.bayou_blues.cyan_lily": "Lirio cian",
+  "block.bayou_blues.light_blue_lily": "Lirio azul celeste",
+  "block.bayou_blues.magenta_lily": "Lirio magenta",
+  "block.bayou_blues.pink_lily": "Lirio rosa",
+  "block.bayou_blues.purple_lily": "Lirio violeta",
+  "block.bayou_blues.white_lily": "Lirio blanco",
+
+  "item.bayou_blues.blue_lily": "Lirio azul",
+  "item.bayou_blues.light_gray_lily": "Lirio gris claro",
+  "item.bayou_blues.cyan_lily": "Lirio cian",
+  "item.bayou_blues.light_blue_lily": "Lirio azul celeste",
+  "item.bayou_blues.magenta_lily": "Lirio magenta",
+  "item.bayou_blues.pink_lily": "Lirio rosa",
+  "item.bayou_blues.purple_lily": "Lirio violeta",
+  "item.bayou_blues.white_lily": "Lirio blanco"
 }
