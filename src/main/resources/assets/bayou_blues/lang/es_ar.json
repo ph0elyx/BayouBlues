@@ -33,25 +33,28 @@
   "block.bayou_blues.cypress_knee": "Neumatóforo de ciprés",
   "block.bayou_blues.large_cypress_knee": "Neumatóforo de ciprés alto",
 
+
   "_comment1": "Gooseberries",
   "item.bayou_blues.gooseberries": "Grosellas",
-  "item.bayou_blues.gooseberry_juice": "Jugo de grosella",
-  "item.bayou_blues.gooseberry_pie": "Tarta de grosella",
+  "item.bayou_blues.gooseberry_juice": "Zumo de grosellas",
+  "item.bayou_blues.gooseberry_pie": "Tarta de grosellas",
 
   "block.bayou_blues.cypress_branch": "Rama de ciprés",
   "block.bayou_blues.gooseberry_sack": "Saco de grosellas",
 
-  "_comment2": "Slabfish",
-  "entity.bayou_blues.slabfish.type.bayou": "Bayou",
+  "item.bayou_blues.honey_glazed_gooseberries": "Grosellas glaseadas con miel",
+  "item.bayou_blues.gooseberry_jam": "Mermelada de grosellas",
+  "item.bayou_blues.gooseberry_jam_cookie": "Galletita con mermelada de grosellas",
 
-  "_comment3": "Misc",
+
+  "_comment2": "Biome & Slabfish",
   "biome.bayou_blues.bayou": "Bayou",
   "biome.bayou_blues.bayou_hills": "Colinas de bayou",
 
-  "block.bayou_blues.algae": "Algas",
-  "block.bayou_blues.beard_moss_block": "Bloque de musgo de barba",
-  "block.bayou_blues.beard_moss": "Musgo de barba",
+  "entity.bayou_blues.slabfish.type.bayou": "Bayou",
 
+
+  "_comment3": "Lily Flowers",
   "block.bayou_blues.blue_lily": "Lirio azul",
   "block.bayou_blues.light_gray_lily": "Lirio gris claro",
   "block.bayou_blues.cyan_lily": "Lirio cian",
@@ -68,5 +71,14 @@
   "item.bayou_blues.magenta_lily": "Lirio magenta",
   "item.bayou_blues.pink_lily": "Lirio rosa",
   "item.bayou_blues.purple_lily": "Lirio violeta",
-  "item.bayou_blues.white_lily": "Lirio blanco"
+  "item.bayou_blues.white_lily": "Lirio blanco",
+
+
+  "_comment4": "Other Vegetation",
+  "block.bayou_blues.algae": "Algas",
+
+  "block.bayou_blues.beard_moss_block": "Bloque de musgo de barba",
+  "block.bayou_blues.beard_moss": "Musgo de barba",
+
+  "block.bayou_blues.giant_fern": "Helecho gigante"
 }
