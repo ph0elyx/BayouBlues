@@ -76,6 +76,10 @@
 
   "_comment4": "Other Vegetation",
   "block.bayou_blues.algae": "Algas",
+  "block.bayou_blues.algae_thatch": "Paja de algas",
+  "block.bayou_blues.algae_thatch_slab": "Losa de paja de algas",
+  "block.bayou_blues.algae_thatch_stairs": "Escaleras de paja de algas",
+  "block.bayou_blues.algae_thatch_vertical_slab": "Losa vertical de paja de algas",
 
   "block.bayou_blues.beard_moss_block": "Bloque de musgo de barba",
   "block.bayou_blues.beard_moss": "Musgo de barba",
